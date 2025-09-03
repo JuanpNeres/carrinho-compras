@@ -1,3 +1,6 @@
+let totalGeral = 0;
+limpar();
+
 function adicionar(){
     //recuperar valores nome do produto, quantidade e valor.
     let produto = document.getElementById('produto').value;
@@ -15,8 +18,14 @@ function adicionar(){
         </section>`
 
     //atualizar o valor total;
+    totalGeral = totalGeral + subtotal
+    let campoTotal = document.getElementById('valor-total');
+    campoTotal.textContent = `R$${totalGeral}`
+    document.getElementById('quantidade').value = 0;
 }
 
 function limpar(){
-
+    totalGeral = 0;
+    document.getElementById('lista-produtos').innerHTML = '';
+    document.getElementById('valor-total').textContent = 'R$ 0'
 }
